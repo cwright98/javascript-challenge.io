@@ -25,21 +25,20 @@ button.on("click", ()=> {
     var inputtedDate=inputDate.property("value").trim();
     var inputtedCity=inputCity.property("value").trim();
     var filterDate=tableData.filter(tableData=>tableData.datetime==inputtedDate);
-    var filterCombinedData = tableData.filter(tableData => tableData.datetime === inputtedDate);
-    $tbody.html("");
+      $tbody.html("");
     let response = {
-        filterDate, filterCombinedData
+        filterDate
     }
     
     if(response.filterDate.length !== 0) {
-        addData(filterCombinedData);
+        addData(filterDate);
     }
 
 
 
     
-        else if(response.filterCombinedData.length === 0 && ((response.filterDate.length !== 0 || response.filterCity.length !== 0))) {
-            addData(filterDate) || addData(filterCity);
+        else if(response.filterCombinedData.length === 0 && ((response.filterDate.length !== 0)) {
+            addData(filterDate);
         }
 
         
